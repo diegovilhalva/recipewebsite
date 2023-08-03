@@ -1,2 +1,2 @@
 # recipewebsite
-A simple recipes websit using nodejs,mongodb,express and bootstap.
+A simple recipes website using nodejs,mongodb,express and bootstap.
