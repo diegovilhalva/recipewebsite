@@ -8,7 +8,7 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "Diego Vilhalva <diegorocha450@yahoo.com>",
+  "author": "Diego Vilhalva",
   "license": "MIT",
   "dependencies": {
     "connect-flash": "^0.1.1",
