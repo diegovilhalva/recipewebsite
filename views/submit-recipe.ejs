@@ -1,0 +1,67 @@
+<% if(infoSubmitOBJ != ''){ %>
+    <div class="alert alert-success text-center role="alert">
+     <span><%= infoSubmitOBJ %></span>
+    </div> 
+    <% }%>  
+    <% if(infoErrorOBJ != ''){ %>
+        <div class="alert alert-danger text-center role="alert">
+         <span><%= infoErrorOBJ[0].message %></span>
+        </div> 
+        <% }%>       
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Envie sua receita</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">Compartilhe suas  receitas gratuitamente conosco e mostre sua paixão por culinária </p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-8">
+        
+        <form action="/submit" method="post" enctype="multipart/form-data">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" name="email" id="email" class="form-control" required >
+                </div>
+                <div class="col-12">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+                <div class="col-12">
+                    <label for="description" class="form-label">Descrição</label>
+                    <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="ingredients" class="form-label">Ingredientes</label><br>
+                    <small>Exemplo: Banana</small>
+                    <div class="ingredientsList">
+                        <div class="ingredientDiv mb-1">
+                            <input type="text" name="ingredients" id="ingredients" class="form-control">
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-12" id="btns">
+                    <button type="button" class="btn btn-outline-primary" id="addIngredientsBtn">Adicionar ingredientes</button>
+                </div>
+                <div class="col-12">
+                    <label for="category" class="form-label">Selecione a Categoria</label>
+                    <select name="category" id="category" class="form-select form-control" aria-label="category">
+                        <option selected >Selecionar  categoria</option>
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category.name %>"><%= category.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="image">Imagem da receita</label>
+                    <input type="file" name="image" id="image" class="form-control" accept="image/*">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Enviar receita</button>
+                </div>
+            </div>
+        </form>        
+    </div>
+</div>
